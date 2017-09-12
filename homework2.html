@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rotating Pictures</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<style>
+    	#hero { height:300px; width:960px; }
+        #hero div { position:absolute; z-index: 0; }
+        #hero div.previous { z-index: 1; }
+        #hero div.current { z-index: 2; }
+	</style>
+
+    <script type="text/javascript">
+      $(function() {
+            // create the image rotator
+            setInterval("rotateImages()", 3000);
+      });
+
+      function rotateImages() {
+	      // CurPict will point to the div with class = current
+          var CurPict = $("div.current");
+		  // NextPict will point to the next div - the order it is showing in the HTML code
+          var NextPict = $("div.current").next();
+		  // The if clause is testing if the next image exists and if it does not, it means you have to restart from the first div
+          if (NextPict.length == 0) {
+              CurPict = $("div:first");
+              }
+
+          // We need to make sure that the class current is removed from CurPict and the class previous is added to it
+		  CurPict.removeClass('current');
+		  CurPict.addClass('previous');
+          NextPict.css({ opacity: 0.0 }).addClass('current')
+                  .animate({ opacity: 1.0 }, 1000,
+                              function() {
+                                  CurPict.removeClass('previous');
+                              });
+      }
+    </script>
+</head>
+<body>
+    <h1>Pictures Rotating</h1>
+    <div id="hero">
+       <div class="current"><img src="images/Spring.jpg"></div>
+       <div><img src="images/Leaf.jpg"></div>
+       <div><img src="images/Water.jpg"></div>
+       <div><img src="images/Grass.jpg"></div>
+    </div>
+</body>
+</html>
