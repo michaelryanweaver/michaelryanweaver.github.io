@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>Homework 3</title>
+     <meta charset="utf-8">
+   <script src="files/d3.min.js"></script> 
+      <style>
+          h2 {text-align:center;}
+      </style>
+  </head>
+  <body>
+    <h2>Students in CNIT 132</h2>
+   <script>
+	  d3.json("../hw3data.json", function (data) {
+	  	 
+         var barW = function (d) { return d.students * 5; }
+			 , barSpace = 10 
+			 , barH = 40
+			 , width = "100%"
+			 , height = data.length * (barH + barSpace);
+         
+         var canvas = d3.select("body")
+			.append("svg")
+			.attr("width", width)
+			.attr("height", height);
+          
+          var bar = canvas.selectAll("g")
+			.data(data)  	 
+			.enter()
+			.append("g")
+			.attr("width", barW)
+			.attr("height", barH)
+			.attr("y", function(d, i) { return i * (barH + barSpace); });
+                   
+          bar.append("rect")
+			.attr("width", barW)
+			.attr("height", barH)
+			.attr("fill","blue")
+			.attr("y", function(d, i) { return i * (barH + barSpace); });
+		
+          bar.append("text")
+            .attr("y", function(d, i) { return i * (barH + barSpace)+(barH + barSpace)/2 })
+            .style("font-family", "sans-serif")
+            .style("font-size", "14px")
+            .attr("fill", "white")
+            .text(function (d) { return d.term + " w/ " + d.students + " students"; });
+                  
+    })
+	  
+   </script>
+  </body>
+</html>
+ 
