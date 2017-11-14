@@ -1,0 +1,49 @@
+	{
+			"url": "#",
+			"name": "Delta Donatello",
+			"price": "$5.99",
+			"image": "images/deltaDon_TMNT.jpg",
+			"desc": "Teenage Mutant Ninja Turtle Donatello, but dressed up as a special forces soldier.  Comes with a tiny assault rifle.  Seems good for kids."
+		},
+		{
+			"url": "#",
+			"name": "Michaelangelo",
+			"price": "$5.99",
+			"image": "images/michaelangelo_TMNT.jpg",
+			"desc": "Teenage Mutant Ninja Turtle Michaelangelo.  Classic style with no embellishments."
+		},
+		{
+			"url": "#",
+			"name": "Military Leonardo",
+			"price": "$6.99",
+			"image": "images/militaryLeo_TMNT.jpg",
+			"desc": "Teenage Mutant Ninja Turtle Leonardo after joining the military."
+		},
+		{
+			"url": "#",
+			"name": "Skateboarding Michaelangelo",
+			"price": "$8.99",
+			"image": "images/skateboardin_TMNT.jpg",
+			"desc": "Teenage Mutant Ninja Turtle Michaelangelo with a skateboard, and a bright 90s kid outfit.  I would buy this one."
+		},
+		{
+			"url": "#",
+			"name": "Super Donnie",
+			"price": "$5.99",
+			"image": "images/SuperDonnie_TMNT.jpg",
+			"desc": "Teenage Mutant Ninja Turtle Donatello dressed up like batman for some reason."
+		},
+		{
+			"url": "#",
+			"name": "Leonardo",
+			"price": "$6.99",
+			"image": "images/newLeo_TMNT.jpg",
+			"desc": "Teenage Mutant Ninja Turtle Leonardo, but in a new action figure style.  Not as good as the classic one."
+		},
+		{
+			"url": "#",
+			"name": "Touchdown Tossin Leonardo",
+			"price": "6.99",
+			"image": "images/touchdown_TMNT.jpg",
+			"desc": "Teenage Mutant Ninja Turtle Leonardo, dressed up in a football uniform.  Comes with a football and helmet."
+		}
