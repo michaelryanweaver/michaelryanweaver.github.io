@@ -33,7 +33,7 @@ app.filter('searchFor', function(){
 
 // The controller
 
-app.controller('ToySearchController', '$scope', '$http', function($scope, $http) {
+app.controller('ToySearchController', ['$scope', '$http', function($scope, $http) {
 	$http.get('data/toys.json').success(function(data) { $scope.items= data;
 	}); 
-});
+}]);
