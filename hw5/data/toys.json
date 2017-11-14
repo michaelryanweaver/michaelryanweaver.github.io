@@ -1,4 +1,4 @@
-	{
+	[{
 			"url": "#",
 			"name": "Delta Donatello",
 			"price": "$5.99",
@@ -46,4 +46,4 @@
 			"price": "6.99",
 			"image": "images/touchdown_TMNT.jpg",
 			"desc": "Teenage Mutant Ninja Turtle Leonardo, dressed up in a football uniform.  Comes with a football and helmet."
-		}
+		}]
