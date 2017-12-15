@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!-- React -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"></script>
+      <!-- <script src="https://fb.me/react-15.2.1.min.js"></script>
+      <script src="https://fb.me/react-dom-15.2.1.min.js"></script> -->
+	<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/6.1.19/browser.js"></script>  -->
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+        <title>Changing Style</title>
+    </head>
+<body>
+   <div id="main"></div>
+<script type="text/babel">
+var App = React.createClass({
+  getInitialState: function() {
+    return {
+      bgName: "" 
+    };
+  },
+
+  handleNameChange: function (name) {
+    this.setState({ bgName: name });
+  },
+
+  updateName: function () {
+    var content= document.getElementById('content');
+  },
+
+  componentDidMount: function () {
+    this.updateName()
+  },
+ 
+  componentDidUpdate: function () { 
+    this.updateName()
+  },
+
+  render: function() {
+    return (
+      <div>
+        <h1>Lab Check in</h1>
+        <label>Choose a name to check in &nbsp;&nbsp;&nbsp;
+          <NameSel value={this.state.bgName} onNameChange={this.handleNameChange}/>
+        </label>
+        <p id="content">
+        Hello {this.state.bgName}, you have now checked in at {this.props.date.toTimeString()}
+  		</p>
+      </div>
+    )
+  }
+});
+
+// NameSel component
+var NameSel = React.createClass({
+  propTypes: {
+    value: React.PropTypes.string.isRequired,
+    onNameChange: React.PropTypes.func
+  },
+  
+  handleChange: function(e) {
+    e.preventDefault();
+    var name = e.target.value
+    if (this.props.onNameChange)
+      this.props.onNameChange(name);
+  },
+  
+  render: function() {
+    return (
+      <select value={this.props.value} onChange={this.handleChange}>
+	    <option value="">Select a name</option>
+        <option value="Kermit">Kermit</option>
+        <option value="Beaker">Beaker</option>
+        <option value="Fozzy">Fozzy</option>
+        <option value="Gonzo">Gonzo</option>
+        <option value="Skeeter">Skeeter</option>
+        <option value="Scooter">Scooter</option>
+        <option value="Piggy">Piggy</option>		
+        <option value="Animal">Animal</option>
+        <option value="Rowlf">Rowlf</option>
+        <option value="Bunsen">Bunsen</option>
+      </select>
+    )
+  }		
+});
+
+setInterval(function() {
+	ReactDOM.render(<App date={new Date()} />, document.querySelector('#main'));
+}, 500);
+</script>
+</body>
+</html>

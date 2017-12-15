@@ -1,0 +1,41 @@
+
+.eventList {
+	margin: auto;
+    width: 40%;
+    border: 3px solid black;
+    text-align:left;
+}
+.event {
+	padding:5px;
+	display:block;
+	overflow:auto;
+	border-bottom: 3px solid red;
+	background-color:beige;
+}
+
+.eventName {
+	margin:10px;
+	font-size: 20px;
+	font-weight:bold;
+}
+.eventPresenter {
+	margin:10px;
+	color:red;
+	font-style: italic;
+	display:inline;
+
+}
+.eventPhoto img {
+	float:right;
+	width: 150px;
+	border: 1px solid black;
+	margin: 10px;
+}
+
+.saves{
+	margin:10px;
+}
+
+.eventsFooter {
+	margin: 10px;
+}
