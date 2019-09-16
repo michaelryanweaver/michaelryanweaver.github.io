@@ -1,0 +1,15 @@
+body {
+ margin: 40px;
+ background-color:orange;
+}
+h1 {
+  text-align: center;
+  font-size:3em;
+}
+h2 {
+  text-align: center;
+}
+img {
+  border-style: solid;
+  border-width: 0px;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	
+	<title>
+		HW1a: Simple CSS and HTML
+	</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js""></script>
+	<script> 
+	$(document).ready(function(){
+	  $("button").click(function(){
+		$("h1").animate({fontSize: "5em"});
+		$("h1").animate({fontSize: "3em"
+						 ,color:"red"
+						 });
+		$("img").animate({borderWidth: "4px"	
+							,borderTopColor:"black"
+							,borderLeftColor:"black"
+							,borderRightColor:"black"
+							,borderBottomColor:"black"
+							});			
+	  });
+	});
+	</script>
+</head>
+<body>
+	<h1>
+		Mobile Web w/HTML, CSS & JS
+	</h1>
+	<div class="media">
+		<img src="rambo_sits_xmashat.jpg" class="align-self-start mr-3" alt="a dog named Rambo wearing a santa hat">
+		<div class="media-body">
+			<p>
+				My name is Michael.  I currently work doing data services and some web development at an environmental research center.  I've taken a lot of web development and programming courses and have a few years of experience working on web applications.
+			</p>
+		</div>	
+	</div>	
+	<p>
+		I'm attending this class to keep my web development skills up to date and learn more about making web tools for mobile.
+	</p>
+	<h2>
+		Technologies Used For This Class
+	</h2>
+		<ul>
+		<li>
+			HTML
+		</li>
+		<li>
+			CSS
+		</li>
+		<li>
+			Javascript
+		</li>		
+	</ul>
+	<h2>
+		Resources
+	</h2>		
+	<ul>
+		<li>
+		<a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> - this website is the homepage for Bootstrap, which is an open source toolkit for developing with HTML, CSS, and JS
+		</li>
+		<li>
+		<a href="https://www.w3schools.com/html/default.asp" target="_blank">w3schools</a> - this website is a good reference for HTML
+		</li>
+	</ul>
+	<button>Start Animation</button>
+</body>
+</html>
