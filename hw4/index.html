@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A basic progressive web application using Service Workers">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Homework 4</title>
+    <script>
+      // Add a global error event listener early on in the page load, to help ensure that browsers
+      // which don't support specific functionality still end up displaying a meaningful message.
+      window.addEventListener('error', function(error) {
+        if (ChromeSamples && ChromeSamples.setStatus) {
+          console.error(error);
+          ChromeSamples.setStatus(error.message + ' (Your browser may not support this feature.)');
+          error.preventDefault();
+        }
+      });
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+  </head>
+
+  <body>
+    
+    <h1>Progressive Web Applications</h1>
+    <p>
+    	A Progressive Web Application (PWA) combines different technologies to create a powerful web application that is reliable, fast, and engaging.
+    </p>
+    <p>
+    	A basic PWA would have a manifest file, an icon, a service worker with at least a fetch event, and be served over HTTPS.  PWAs also use web push notifications, providing a function more typical of native apps. 
+    </p>
+    <p>
+    	These technologies allow users to launch the app from their home screen, make it load instantly regardless of the network state, and can alert the user to updates when they are not browsing the app.  These attributes help to engage users and keep them engaged with a fast and reliable experience.
+    </p>
+   
+
+    <h3>Service Worker Demo with Background Images</h3>
+    <p>The first time you request one of the background color images, the service worker will be load it from the network, but the next time, it will be retrieved from the cache.</p>
+    <label for="images">Choose the background color to be shown:</label>
+    <select id="images">
+      <option value="images/lightgold.jpg">light gold</option>
+      <option value="images/lightblue.jpg"">light blue</option>
+    </select>
+    <button id="show">Show Background Color Selected</button>
+    <div id="container"></div>
+      <script>
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('service-worker.js');
+        }
+
+        document.querySelector('#show').addEventListener('click', () => {
+          const backgroundUrl = document.querySelector('select').selectedOptions[0].value;
+          let imgElement = document.createElement('img');
+          imgElement.src = backgroundUrl;
+          console.log(backgroundUrl);
+          console.log(imgElement);
+          document.body.style.backgroundImage = "url(" + backgroundUrl + ")";
+        });
+      </script>
+
+  </body>
+</html>

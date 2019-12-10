@@ -1,0 +1,21 @@
+{
+  "short_name": "Hw4App",
+  "name": "My great Hw4 App",
+  "icons": [
+			{
+			  "src": "images/rambo_sits_xmashat.png",
+			  "type": "image/png",
+			  "sizes": "48x48"
+			}, {
+				"src": "images/rambo_sits_xmashat.png",
+			"type": "image/png",
+			"sizes": "96x96"
+			}, {
+				"src": "images/rambo_sits_xmashat.png",
+				
+"type": "image/png",
+				"sizes": "192x192"
+				}
+			],
+  "start_url": "index.html?launcher=true",
+  "display": "standalone"}
